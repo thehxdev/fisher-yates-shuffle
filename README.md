@@ -1,18 +1,11 @@
 # Fisher-Yates Shuffle
-Fisher-Yates shuffle algorithm (also known as as Knuth shuffle) implementation
-using WolfSSL random number generator (RNG).
-
-## Dependencies
-If you want to use WolfSSL RNG, then read [DEPENDENCIES.md](DEPENDENCIES.md) first.
-Otherwise continue to build section.
+Fisher-Yates shuffle algorithm (also known as as Knuth shuffle) implementation.
+This implementation uses glibc `random` and `srandom` functions. For real world
+use cases implement this algorithm yourself with appropriate random number generator
+(RNG) like [WolfSSL](https://www.wolfssl.com/) RNG or other cryptographic libraries.
 
 ## Build
-Without WolfSSL and with libc `srandom` and `random`:
+To build the example program:
 ```bash
-gcc -std=gnu99 -Og -g3 main.c shuffle.c
-```
-With WolfSSL RNG:
-```bash
-gcc -std=gnu99 -Og -g3 \
-    -I./deps/include -L./deps/lib main.c shuffle.c -l:libwolfssl.a
+gcc -std=gnu99 -Wall -Wextra -Og -g3 main.c shuffle.c
 ```

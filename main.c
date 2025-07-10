@@ -15,7 +15,7 @@ int main(void) {
         printf("%d ", xs[i]);
     putchar('\n');
 
-    shuffle_simple(xs, sizeof(*xs), xs_size, swap_num);
+    shuffle(xs, sizeof(*xs), xs_size, swap_num);
 
     for (i = 0; i < xs_size; i++)
         printf("%d ", xs[i]);
